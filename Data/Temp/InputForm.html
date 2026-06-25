@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Generate </title>
+	<script type="text/javascript">
+		function generateNumber() {
+var username = document.getElementById("username").value;
+    var empcode = document.getElementById("empcode").value;
+    var email = document.getElementById("emailid").value;
+    var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+			var empcodeRegex = /^\d+$/;
+			if (!empcodeRegex.test(empcode)) {
+				document.getElementById("empcode-error").innerHTML = "Empcode must contain only integers.";
+				document.getElementById("empcode").value = "";
+			} else {
+				document.getElementById("empcode-error").innerHTML = "";
+				var randomNumber = Math.floor(Math.random() * 1000000);
+				document.getElementById("output").innerHTML = "Please use this Passcode to Login and Reset Password: " + randomNumber;
+			}
+
+if (username == "" || empcode == "" || email == "") {
+        document.getElementById("output").innerHTML = "Please fill in all fields.";
+    } else if (!emailRegex.test(email)) {
+        document.getElementById("output").innerHTML = "Please enter a valid email address.";
+    } else {
+        var randomNumber = Math.floor(Math.random() * 1000000);
+        document.getElementById("output").innerHTML = "Please use this Passcode to Login and Reset Password: " + randomNumber;
+    }
+
+		}
+		
+		function validateUsername() {
+			var username = document.getElementById("username").value;
+			var usernameRegex = /^[a-zA-Z]+$/;
+			if (!usernameRegex.test(username)) {
+				document.getElementById("username-error").innerHTML = "Username must contain only alphabets.";
+				document.getElementById("username").value = "";
+			} else {
+				document.getElementById("username-error").innerHTML = "";
+			}
+		}
+		
+		function validateEmail() {
+			var email = document.getElementById("emailid").value;
+			var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+			if (!emailRegex.test(email)) {
+				document.getElementById("email-error").innerHTML = "Please enter a valid email address.";
+				document.getElementById("emailid").value = "";
+			} else {
+				document.getElementById("email-error").innerHTML = "";
+			}
+		}
+	</script>
+</head>
+<body>
+
+
+<center>
+<img src="E:\YOUTUBE CONTENT\Z Banners logo\BANNER LOGO\Banner3 - Copy.png"alt="Company Logo" width="300" height="100" > 
+</center>
+	<h1 style="text-align: center;" > Temp Passcode Generator</h1> 
+	<form> <b>
+
+		<label for="username">Username:</label>
+		<input type="text" id="username" name="username" onchange="validateUsername()" required>
+		<label id="username-error" style="color: red;"></label><br><br>
+
+		<label for="empcode">Empcode:</label>
+		<input type="text" id="empcode" name="empcode" onchange="generateNumber()" required>
+		<label id="empcode-error" style="color: red;"></label><br><br>
+
+		<label for="emailid">Email ID:</label>
+		<input type="email" id="emailid" name="emailid" onchange="validateEmail()" required>
+		<label id="email-error" style="color: red;"></label><br><br>
+
+		<input type="button" style="background-color: #4CAF50; color: white;" value="Generate Passcode" onclick="generateNumber()"><br><br>
+
+		<label id="output"></label>
+
+	</b></form>
+
+<center> <label style="background-color: #DFDFDF ; text-align: center; " > ⚫⚫⚫ Follow the Links below to connect and download the source files ⚫⚫⚫ </label> 
+
+<footer>
+<p> <a href="https://www.youtube.com/c/TutorialsbyMukeshKala">Subscribe to Youtube Channel</a></p>
+      <p> <a href="https://mukeshkala.com/">Checkout My Website for the Source Code </a></p>
+<p> <a href="https://www.instagram.com/uipathtutorials//">Instagram</a> |   <a href="https://www.linkedin.com/in/mukeshkala/">LinkedIn</a>  |  <a href="https://twitter.com/tweetmukeshkala">Twitter</a>  </p>
+
+    </footer>
+
+
+</center>
+
+
+</body>
+</html>

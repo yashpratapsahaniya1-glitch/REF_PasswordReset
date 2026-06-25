@@ -1,0 +1,6 @@
+{
+  "Name": "REF_PasswordReset",
+  "ProjectType": "Process",
+  "Description": "Robotic Enterprise Framework_PasswordReset_Dispatcher And Performer",
+  "MainFile": "Main.xaml"
+}
